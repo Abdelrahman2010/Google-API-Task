@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layoutDirection="ltr"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="match_parent"
+        android:id="@+id/sign_in_button"
+        android:layout_gravity="center"
+        android:layout_height="70dp">
+
+    </com.google.android.gms.common.SignInButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write your Email "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="5dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email must be correct"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="5dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google Calendar must be public"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="5dp"
+        android:textSize="25sp" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Your Email gmail"
+        android:layout_margin="5dp"
+        android:id="@+id/Email_ET"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:layout_height="70dp" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:text="Enter"
+        android:id="@+id/EnterBT"
+        android:background="@color/colorPrimary"
+        android:layout_height="70dp" />
+
+</LinearLayout>
