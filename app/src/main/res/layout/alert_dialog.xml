@@ -51,6 +51,18 @@
 
             android:layout_height="match_parent" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#000"
+            android:text="Cancel"
+            android:id="@+id/Cancel"
+            android:gravity="center"
+
+            android:layout_height="match_parent" />
+
 
     </LinearLayout>
 

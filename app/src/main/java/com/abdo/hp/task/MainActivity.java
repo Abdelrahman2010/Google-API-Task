@@ -153,16 +153,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             // tv.setText(emailGoogle);
             Toast.makeText(getApplicationContext(), "User ID:  " + emailGoogle, Toast.LENGTH_LONG).show();
 
-            //access mGoogleLogout Button
-//            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//            mGoogleLogoutButton.setLaoutParams(lp);
-//            mGoogleLoginButton.setVisibility(View.INVISIBLE);
-//            mGoogleLogoutButton.setVisibility(View.VISIBLE);
+
         }
         else{
 
             Toast.makeText(getApplicationContext(), mGoogleSignInResult.toString() ,Toast.LENGTH_LONG).show();
-            Log.w("a7a", "signInResult:failed code=" + mGoogleSignInResult.getStatus());
 
 
 

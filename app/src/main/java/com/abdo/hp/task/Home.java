@@ -104,37 +104,7 @@ public class Home extends AppCompatActivity {
         t.start();
 
 
-//        Calendar c = Calendar.getInstance();
-//
-//        String TodayW = c.get(java.util.Calendar.YEAR) + "-"
-//                + c.get(java.util.Calendar.MONTH)
-//                + "-" + c.get(java.util.Calendar.DAY_OF_MONTH);
-//
-//        Toast.makeText(Home.this, "NOW" +TodayW, Toast.LENGTH_LONG).show();
-//
-//
-//        Calendar startCalemder = Calendar.getInstance();
-//        startCalemder.setTime(new Date());
-//        startCalemder.add(Calendar.DATE, 1);
-//
-//        Calendar endCalendar = Calendar.getInstance();
-//        endCalendar.setTime(new Date());
-//        endCalendar.add(Calendar.DATE, 16);
-//
-//        //loop over day by day
-//        for (; startCalemder.compareTo(endCalendar) <= 0;
-//             startCalemder.add(Calendar.DATE, 1)) {
-//            startCalemder.get(Calendar.YEAR); //shows year
-//            startCalemder.get(Calendar.MONTH); //shows month
-//            startCalemder.get(Calendar.DAY_OF_MONTH); //shows day
-//
-//
-//            String Today = startCalemder.get(java.util.Calendar.YEAR) + "-"
-//                    + startCalemder.get(java.util.Calendar.MONTH)
-//                    + "-" + startCalemder.get(java.util.Calendar.DAY_OF_MONTH);
-//
-//            Toast.makeText(Home.this, Today, Toast.LENGTH_LONG).show();
-//        }
+
 
     }
 

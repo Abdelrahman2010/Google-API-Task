@@ -2,7 +2,10 @@ package com.abdo.hp.task;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,11 +108,11 @@ public class CustList extends ArrayAdapter<String> {
         return listViewItem;
     }
 
-    void open_dialog(String Email_Creator) {
+    void open_dialog(final String Email_Creator) {
 
 
         final Dialog dialog = new Dialog(context);
-        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        final WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         double hi = WindowManager.LayoutParams.MATCH_PARENT / 2;
@@ -121,12 +124,36 @@ public class CustList extends ArrayAdapter<String> {
         TextView mail =  (TextView)dialog.findViewById(R.id.mail);
         mail.setText(Email_Creator);
         Button ok = (Button) dialog.findViewById(R.id.ok);
+        Button Cancel = (Button) dialog.findViewById(R.id.Cancel);
 
 
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String mailto = "mailto:"+Email_Creator +
+                        "?subject=" + Uri.encode("events overlapped ") +
+                        "?subject=" + Uri.encode("events overlapped ") +
+                        "&body=" + Uri.encode("please can we postpone meeting to other time");
+
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse(mailto));
+
+                try {
+                    context.startActivity(emailIntent);
+                } catch (ActivityNotFoundException e) {
+                    //TODO: Handle case where no email app is available
+                }
+
+                dialog.dismiss();
+
+            }
+        });
+
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 dialog.dismiss();
 

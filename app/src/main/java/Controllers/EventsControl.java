@@ -253,57 +253,77 @@ public class EventsControl {
 
         Calendar c = Calendar.getInstance();
 
+        int realmonth2 = c.get(Calendar.MONTH) + 1;
+        String months2 = Integer.toString(realmonth2);
+        if (realmonth2 > 12) {
+
+            realmonth2 = 1;
+        }
+        if (realmonth2 < 10) {
+
+            months2 = "0" + months2;
+        }
+
         String Today = c.get(Calendar.YEAR) + "-"
-                + c.get(Calendar.MONTH)
+                + months2
                 + "-" + c.get(Calendar.DAY_OF_MONTH);
+
 
 
         String[] split = CalenderDate.split("T");
         String CalendarDate = split[0];
         String returnedDate = "not";
 
-        Calendar startCalemder = Calendar.getInstance();
-        startCalemder.setTime(new Date());
-        startCalemder.add(Calendar.DATE, 1);
-
-        Calendar endCalendar = Calendar.getInstance();
-        endCalendar.setTime(new Date());
-        endCalendar.add(Calendar.DATE, 16);
-
-        //loop over day by day
-        int i = 0;
-        for (; startCalemder.compareTo(endCalendar) <= 0;
-             startCalemder.add(Calendar.DATE, 1)) {
-            startCalemder.get(Calendar.YEAR); //shows year
-            startCalemder.get(Calendar.MONTH); //shows month
-            startCalemder.get(Calendar.DAY_OF_MONTH); //shows day
+        if (CalendarDate.equals(Today)) {
 
 
-            int realmonth = startCalemder.get(Calendar.MONTH) + 1;
-            String months = Integer.toString(realmonth);
-            if (realmonth > 12) {
+            returnedDate = Integer.toString(0);
 
-                realmonth = 1;
+        }else {
+
+            Calendar startCalemder = Calendar.getInstance();
+            startCalemder.setTime(new Date());
+            startCalemder.add(Calendar.DATE, 1);
+
+            Calendar endCalendar = Calendar.getInstance();
+            endCalendar.setTime(new Date());
+            endCalendar.add(Calendar.DATE, 16);
+
+            //loop over day by day
+            int i = 0;
+            for (; startCalemder.compareTo(endCalendar) <= 0;
+                 startCalemder.add(Calendar.DATE, 1)) {
+                startCalemder.get(Calendar.YEAR); //shows year
+                startCalemder.get(Calendar.MONTH); //shows month
+                startCalemder.get(Calendar.DAY_OF_MONTH); //shows day
+
+
+                int realmonth = startCalemder.get(Calendar.MONTH) + 1;
+                String months = Integer.toString(realmonth);
+                if (realmonth > 12) {
+
+                    realmonth = 1;
+                }
+                if (realmonth < 10) {
+
+                    months = "0" + months;
+                }
+
+                String nextday = startCalemder.get(java.util.Calendar.YEAR) + "-"
+                        + months
+                        + "-" + startCalemder.get(java.util.Calendar.DAY_OF_MONTH);
+
+                if (CalendarDate.equals(nextday)) {
+
+
+                    returnedDate = Integer.toString(i);
+                    break;
+
+                }
+
+                i++;
+
             }
-            if (realmonth < 10) {
-
-                months = "0" + months;
-            }
-
-            String nextday = startCalemder.get(java.util.Calendar.YEAR) + "-"
-                    + months
-                    + "-" + startCalemder.get(java.util.Calendar.DAY_OF_MONTH);
-
-            if (CalendarDate.equals(nextday)) {
-
-
-                returnedDate = Integer.toString(i);
-                break;
-
-            }
-
-            i++;
-
         }
 
 
